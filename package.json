@@ -1,0 +1,9 @@
+{
+  "name": "kitchen-garden-monorepo",
+  "private": true,
+  "workspaces": ["web-app", "mobile-app"],
+  "scripts": {
+    "dev:web": "npm --prefix web-app run dev",
+    "dev:mobile": "npm --prefix mobile-app run start"
+  }
+}

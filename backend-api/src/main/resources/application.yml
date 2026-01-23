@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/kitchengarden
+    username: kitchengarden
+    password: kitchengarden
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+
+# GraphQL SPQR
+graphql:
+  spqr:
+    gui:
+      enabled: true
+
+security:
+  supabase:
+    jwks-url: ${SUPABASE_JWT_JWKS_URL:https://<project-ref>.supabase.co/auth/v1/keys}
+    audience: ${SUPABASE_AUDIENCE:authenticated}
+
+stripe:
+  secret-key: ${STRIPE_SECRET_KEY:}
+
+app:
+  checkout:
+    success-url: http://localhost:3000/checkout/success
+    cancel-url: http://localhost:3000/checkout/cancel

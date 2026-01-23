@@ -1,0 +1,18 @@
+# IntelliJ
+.idea/
+*.iml
+
+# Maven
+**/target/
+
+# Node
+**/node_modules/
+**/.next/
+**/.expo/
+**/dist/
+**/.env
+**/.env.local
+
+# OS
+.DS_Store
+Thumbs.db
