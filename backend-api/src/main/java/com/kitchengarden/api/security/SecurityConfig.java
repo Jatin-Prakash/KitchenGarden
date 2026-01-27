@@ -10,7 +10,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class SecurityConfig {
 
-    @Value("${security.supabase.jwks-url}")
+    @Value("${security.cognito.jwks-url}")
     private String jwksUrl;
 
     @Bean
@@ -29,4 +29,18 @@ public class SecurityConfig {
 
         return http.build();
     }
+
+//    @Bean
+//    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+//        CognitoLogoutHandler cognitoLogoutHandler = new CognitoLogoutHandler();
+//
+//        http.csrf(Customizer.withDefaults())
+//                .authorizeHttpRequests(authz -> authz
+//                        .requestMatchers("/").permitAll()
+//                        .anyRequest()
+//                        .authenticated())
+//                .oauth2Login(Customizer.withDefaults())
+//                .logout(logout -> logout.logoutSuccessHandler(cognitoLogoutHandler));
+//        return http.build();
+//    }
 }

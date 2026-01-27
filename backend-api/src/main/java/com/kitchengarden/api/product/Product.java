@@ -6,7 +6,6 @@ import java.time.OffsetDateTime;
 @Entity
 @Table(name = "products")
 public class Product {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,6 +27,8 @@ public class Product {
 
     @Column(nullable = false)
     private OffsetDateTime createdAt = OffsetDateTime.now();
+    @Column(nullable = false)
+    public Integer discountPercent;
 
     public Product() {}
 
@@ -51,4 +52,8 @@ public class Product {
     public String getImageUrl() { return imageUrl; }
     public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
     public OffsetDateTime getCreatedAt() { return createdAt; }
+
+    public Integer getDiscountPercent() { return discountPercent; }
+
+    public void setDiscountPercent(Integer discountPercent) { this.discountPercent = discountPercent; }
 }

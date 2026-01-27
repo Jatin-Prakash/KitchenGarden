@@ -4,7 +4,7 @@ import com.kitchengarden.api.nutrition.CaloriesService;
 import com.kitchengarden.api.product.Product;
 import com.kitchengarden.api.product.ProductRepository;
 import com.kitchengarden.api.security.AuthUtil;
-import io.leangen.graphql.annotations.GraphQLApi;
+import io.leangen.graphql.spqr.spring.annotations.GraphQLApi;
 import io.leangen.graphql.annotations.GraphQLMutation;
 import io.leangen.graphql.annotations.GraphQLQuery;
 import org.springframework.security.core.Authentication;

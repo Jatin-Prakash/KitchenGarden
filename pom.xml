@@ -8,7 +8,12 @@
   <version>1.0.0</version>
   <packaging>pom</packaging>
   <name>Kitchen Garden - Mono Repo</name>
-
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.3.4</version>
+    <relativePath/>
+  </parent>
   <modules>
     <module>backend-api</module>
   </modules>
@@ -28,6 +33,16 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-oauth2-client</artifactId>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-actuator</artifactId>
+      </dependency>
+
     </dependencies>
   </dependencyManagement>
 </project>
