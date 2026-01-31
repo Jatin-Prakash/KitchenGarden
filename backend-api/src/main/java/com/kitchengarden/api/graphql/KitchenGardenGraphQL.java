@@ -4,17 +4,20 @@ import com.kitchengarden.api.nutrition.CaloriesService;
 import com.kitchengarden.api.product.Product;
 import com.kitchengarden.api.product.ProductRepository;
 import com.kitchengarden.api.security.AuthUtil;
+import io.leangen.graphql.annotations.GraphQLArgument;
 import io.leangen.graphql.spqr.spring.annotations.GraphQLApi;
 import io.leangen.graphql.annotations.GraphQLMutation;
 import io.leangen.graphql.annotations.GraphQLQuery;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 @GraphQLApi
 @Component
-public class KitchenGardenGraphQL {
+public class  KitchenGardenGraphQL {
 
     private final ProductRepository productRepository;
     private final AuthUtil authUtil;
@@ -33,7 +36,8 @@ public class KitchenGardenGraphQL {
     }
 
     @GraphQLQuery(name = "caloriesEstimate")
-    public CaloriesService.CaloriesEstimate caloriesEstimate(String productName, int quantity) {
+    public CaloriesService.CaloriesEstimate caloriesEstimate(@GraphQLArgument(name = "productName") String productName,
+                                                             @GraphQLArgument(name = "quantity") int quantity) {
         return caloriesService.estimate(productName, quantity);
     }
 

@@ -43,4 +43,5 @@ public class CognitoLogoutHandler extends SimpleUrlLogoutSuccessHandler {
                 .build()
                 .toUriString();
     }
+
 }
