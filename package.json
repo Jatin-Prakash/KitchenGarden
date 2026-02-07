@@ -5,5 +5,11 @@
   "scripts": {
     "dev:web": "npm --prefix web-app run dev",
     "dev:mobile": "npm --prefix mobile-app run start"
+  },
+  "overrides": {
+    "fast-xml-parser": "^5.3.4"
+  },
+  "devDependencies": {
+    "@types/react": "~19.1.10"
   }
 }

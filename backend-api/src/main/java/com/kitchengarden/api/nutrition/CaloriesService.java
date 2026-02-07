@@ -8,6 +8,13 @@ import java.util.Map;
 public class CaloriesService {
 
     // calories per unit (approx). You can replace with DB table or external nutrition API.
+
+
+    private final FatSecretService fatSecretService;
+
+    public CaloriesService(FatSecretService fatSecretService) {
+        this.fatSecretService = fatSecretService;
+    }
     private static final Map<String, Integer> CAL_PER_UNIT = Map.of(
         "banana", 105,
         "apple", 95,
