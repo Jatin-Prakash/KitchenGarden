@@ -10,6 +10,7 @@ public class DiscountCampaign {
 
     public String name;
     @Enumerated(EnumType.STRING)
+    @Column(columnDefinition = "varchar(255)")
     public DiscountType type;
     public double value;
     public double minCartValue;
